@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>REDSTORE | Shop Freely and Entirely</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/453f31b8fd.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header class="header">
+        <nav class="nav-bar">
+            <img src="../img/logo.png" alt="logo" class="logo">
+            <ul class="nav-links close">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../Products/index.html">Product</a></li>
+                <li><a href="../contact/index.html">Contact</a></li>
+                <li><a href="index.html">Account</a></li>
+                
+            </ul>
+            <div>
+                <a href="../Cart/index.html"><img src="../img/cart.png" alt="cart" class="cart"></a>
+            </div>
+            <div class="humber-icon" id="nav-toggle">
+                <span class="first-span"></span>
+                <span class="second-span"></span>
+                <span class="third-span"></span>
+            </div>
+        </nav>
+
+        <!-- Account Page -->
+        <div class="showcase row">
+            <figure class="showcase-img">
+                <img src="../img/image1.png" alt="football players">
+            </figure>
+            <div class="form-container">
+                <div class="form-btn">
+                    <span onclick="loginBtn()">Login</span>
+                    <span onclick="signinBtn()">Sign In</span>
+                    <hr id="indicator">
+                </div>
+                <form id="login">
+                    <input type="text" placeholder="Username">
+                    <input type="password" placeholder="Password">
+                    <button type="submit" class="main-btn">Login</button>
+                    <a>Forgot your password?</a>
+                </form>
+                <form id="signin">
+                    <input type="text" placeholder="Username">
+                    <input type="email" placeholder="Email">
+                    <input type="password" placeholder="Password">
+                    <button type="submit" class="main-btn">Sign In</button>
+                </form>
+            </div>
+        </div>
+    </header>
+
+    <!-- footer -->
+    <footer>
+        <div class="row">
+            <div class="col">
+               <div class="container">
+                <h4>Download Our App</h4>
+                <p>Download App for andriod and ios mobile phones</p>
+                <a href=""><img src="../img/play-store.png" alt="play store"></a>
+                <a href=""><img src="../img/app-store.png" alt="app store"></a>
+               </div>
+            </div>
+            <div class="col">
+                <a href="index.html"><img src="../img/logo-white.png" alt="logo"></a>
+                <p>
+                    Our purpose is to make shopping and getting what you need much easier and stuff more available
+                </p>
+            </div>
+            <div class="col">
+                <h4>Useful Links</h4>
+                <ul>
+                    <li><a href="">Coupons</a></li>
+                    <li><a href="">Blog Post</a></li>
+                    <li><a href="">RedStore Policy</a></li>
+                    <li><a href="">Join Affliate</a></li>
+                </ul>
+            </div>
+            <div class="col">
+                <h4>Follow Us</h4>
+                <ul>
+                   <li><a href="https://facebook.com">Facebook</a></li>
+                   <li><a href="https://twitter.com">Twitter</a></li>
+                   <li><a href="https://instgram.com">Instgram</a></li> 
+                   <li><a href="https://youtube.com">Youtube</a></li> 
+                </ul>
+            </div>
+        </div>
+        <div class="policy">
+            <p>Copyright2022 RedStore</p>
+        </div>
+    </footer>
+
+    <script>
+        const navToggle = document.querySelector('#nav-toggle');
+        const navLinks = document.querySelector('.nav-links');
+        const firstSpan = document.querySelector('.first-span');
+        const secondSpan = document.querySelector('.second-span')
+        const thirdSpan = document.querySelector('.third-span')
+
+        navToggle.addEventListener('click', () => {
+            if (navLinks.className === 'nav-links close') {
+                navLinks.style.height = '100%';
+                secondSpan.style.backgroundColor = 'grey';
+
+                firstSpan.style.transform = 'rotate(45deg)';
+                firstSpan.style.height = '2px';
+
+                thirdSpan.style.transform = 'rotate(135deg)';
+                thirdSpan.style.top = '7px';
+                thirdSpan.style.height = '2px'
+
+                navLinks.className = "nav-links open"
+            }
+            else if (navLinks.className === 'nav-links open') {
+                navLinks.style.height = '0';
+                secondSpan.style.backgroundColor = '#ff523b'
+
+                firstSpan.style.transform = 'none'
+                firstSpan.style.height = '3px';
+
+                thirdSpan.style.transform = 'none';
+                thirdSpan.style.top = '14px';
+                thirdSpan.style.height = '3px'
+
+                navLinks.className = 'nav-links close';
+            }
+        })
+    </script>
+
+    <!-------- js for toggle form  -------->
+    <script>
+        const loginForm = document.querySelector('#login');
+        const signinForm = document.querySelector('#signin');
+        const indicator = document.querySelector('#indicator');
+
+        function loginBtn() {
+            loginForm.style.right = '0';
+            signinForm.style.left = '300px';
+            indicator.style.transform = 'translateX(0)';
+        }
+
+        function signinBtn() {
+            signinForm.style.left = '0';
+            loginForm.style.right = '300px';
+            indicator.style.transform = 'translateX(100%)';
+        }
+    </script>
+
+</body>
+</html>
